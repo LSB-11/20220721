@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class = "myid">
+    <div class = "myid-result"></div>
+
+    <input type="text" class = "mypw">
+    <div class = "mypw-result" ></div>
+
+    <button class = "check">회원가입</button>
+
+    <script>
+        const keyup1 = document.querySelector(".myid");
+        const keyupResult1 = document.querySelector('.myid-result');
+        keyup1.addEventListener('keyup', function(e){
+            console.log(e.target.value);
+            console.log(e);
+            console.log(e.code);
+            keyupResult1.textContent = e.code;
+
+            // 엔터들어가면 내용 지우기
+            if(e.code === "Enter") {
+                e.target.value="";
+            }
+        })
+
+        const keyup2 = document.querySelector(".mypw");
+        const keyupResult2 = document.querySelector('.mypw-result');
+        keyup2.addEventListener('keyup', function(e){
+            console.log(e.target.value);
+            console.log(e);
+            console.log(e.code);
+            keyupResult2.textContent = e.code;
+
+            // 엔터들어가면 내용 지우기
+            if(e.code === "Enter") {
+                e.target.value="";
+            }
+        })
+
+        const btn = document.querySelector(".check");
+        btn.addEventListener("click", function(e) {
+            if (keyupResult1 ==="KeyA" || keyupResult2==="") {
+                alert("id 와 pw를 모두 입력해주세요")
+                console.log("id 와 pw를 모두 입력해주세요")
+            }
+
+        })
+    </script>
+</body>
+</html>

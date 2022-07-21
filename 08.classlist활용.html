@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test{
+      color: blue;
+    }
+  </style>
+
+</head>
+<body>
+
+  
+  <div>HI</div>
+  
+  <script>
+    const div = document.querySelector('div');
+    // setAttr로 하는 방법1
+    //div.setAttribute("class", "test");
+ 
+    // classList로 하는 법2
+    // 이미 추가된 속성이라면 해당 값을 무시한다. hello 두번해도 의미없엉
+    div.classList.add("test");
+    div.classList.add("hello")
+    div.classList.add("hello")
+    
+    //remove
+    //classlist.remove("문자열")
+    //class속성값을 제거한다.
+    // 이미 제거한 속성이면 해당 값을 무시한다.
+    div.classList.remove("test");
+    div.classList.remove("test");
+
+    // toggle
+    // 해당값이 있으면 제거// 없으면 추가
+    div.classList.toggle("test")
+    div.classList.toggle("test")
+    div.classList.toggle("test")
+    // contains
+    // classList.toggle("문자열")
+    // 특정 class명이 추가가 되어있는지 판별
+    // true false 리턴
+    console.log(div.classList.contains("test"));
+    console.log(div.classList.contains("testa"));
+
+    // replace
+    // classList.replace(old, new)
+    div.classList.replace("test", "BBQ")
+
+  </script>
+</body>
+</html>
